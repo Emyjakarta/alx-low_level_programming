@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /** 
  * main - Entry point 
  * Description: A C program that prints prints exactly "Programming is like building a multilingual puzzle"
