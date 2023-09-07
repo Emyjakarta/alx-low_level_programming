@@ -2,7 +2,7 @@
 
 /** 
  * main - A C program that prints prints exactly "Programming is like building a multilingual puzzle"
- * Return : 0
+ * Return : 0 and end the program
  */
 
 int main(void)
