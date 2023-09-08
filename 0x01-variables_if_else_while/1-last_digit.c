@@ -16,10 +16,10 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
 	int B = n % 10;
-	char C = "is";
-	char D = "and is greater than 5";
-	char E = "and is 0";
-	char F = "and is less than 6 and not 0";
+	const char C = "is";
+	const char D = "and is greater than 5";
+	const char E = "and is 0";
+	const char F = "and is less than 6 and not 0";
 
 	if (B > 5)
 	{
@@ -34,6 +34,6 @@ int main(void)
 		printf("Last digit of %i %s %i %s \n", n, C, B, F);
 	}
 	else
-		printf("You have entered an invalid number\n")
+		printf("You have entered an invalid number\n");
 	return (0);
 }
