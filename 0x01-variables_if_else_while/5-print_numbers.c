@@ -10,5 +10,5 @@ int main(void)
 
 	for (Z = 0; Z <= 9; Z++)
 	printf("%i\n", Z);
-}
 	return (0);
+}
