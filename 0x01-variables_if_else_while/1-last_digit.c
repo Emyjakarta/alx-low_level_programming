@@ -12,15 +12,15 @@ int main(void)
 {
 	int n;
 	int B;
+	const char *C = "is";
+	const char *D = "and is greater than 5";
+	const char *E = "and is 0";
+	const char *F = "and is less than 6 and not 0";
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	B = n % 10;
 	/* your code goes there */
-	const char *C = "is";
-	const char *D = "and is greater than 5";
-	const char *E = "and is 0";
-	const char *F = "and is less than 6 and not 0";
 
 	if (B > 5)
 	{
