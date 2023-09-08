@@ -8,8 +8,13 @@ int main(void)
 {
 	int P = 97;
 
-	for (P <= 100; P <= 112; P <= 122)
-	putchar(P);
+	for (; P <= 122; P++)
+	{
+		if (P != 101 && P != 113)
+		{
+			putchar(P);
+		}
+	}
 	putchar('\n');
 	return (0);
 }
