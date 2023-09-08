@@ -24,15 +24,15 @@ int main(void)
 
 	if (B > 5)
 	{
-		printf("Last digit of %i %s %i %s \n", n, C, B, D);
+		printf("Last digit of %i %s %i %s\n", n, C, B, D);
 	}
 	else if (B == 0)
 	{
-		printf("Last digit of %i %s %i %s \n", n, C, B, E);
+		printf("Last digit of %i %s %i %s\n", n, C, B, E);
 	}
 	else if (B < 6)
 	{
-		printf("Last digit of %i %s %i %s \n", n, C, B, F);
+		printf("Last digit of %i %s %i %s\n", n, C, B, F);
 	}
 	else
 		printf("You have entered an invalid number\n");
