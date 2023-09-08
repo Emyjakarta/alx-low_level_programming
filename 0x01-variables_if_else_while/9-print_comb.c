@@ -8,15 +8,13 @@
 int main(void)
 {
 	int Q;
-	int R;
 
 	for (Q = 48; Q <= 57; Q++)
 	{
-		for (R = 48; R <= 57; R++)
 		putchar(Q);
 		putchar(',');
 		putchar(' ');
-		putchar(R);
+		putchar('\n');
 	}
 		return (0);
 }
