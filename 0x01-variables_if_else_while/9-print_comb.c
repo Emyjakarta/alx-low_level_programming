@@ -15,6 +15,8 @@ int main(void)
 		if (Q != 57)
 		putchar(',');
 		putchar(' ');
+		else
+		putchar('\n');
 	}
 		return (0);
 }
