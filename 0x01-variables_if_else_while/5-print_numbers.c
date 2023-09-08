@@ -9,6 +9,7 @@ int main(void)
 	int Z;
 
 	for (Z = 0; Z <= 9; Z++)
-	printf("%i\n", Z);
+	printf("%i", Z);
+	printf("\n");
 	return (0);
 }
