@@ -18,9 +18,9 @@ int main(void)
 	int R;
 	int S;
 
-	for (Q = 48; Q < 55; Q++)
+	for (Q = 48; Q <= 55; Q++)
 	{
-		for (R = Q + 1; R < 56; R++)
+		for (R = Q + 1; R <= 56; R++)
 		{
 			for (S = R + 1; S <= 57; S++)
 			{
