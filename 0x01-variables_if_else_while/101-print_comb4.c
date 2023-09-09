@@ -25,12 +25,16 @@ int main(void)
 			for (S = R + 1; S <= 57; S++)
 			{
 				if (S > R && R > Q)
+				{
 					putchar(Q);
 					putchar(R);
 					putchar(S);
+				}
 					if (Q != 55)
+					{
 						putchar(',');
 						putchar(' ');
+					}
 			}
 		}
 	}
