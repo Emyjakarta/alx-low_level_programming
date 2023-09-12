@@ -3,4 +3,4 @@
 
 char _putchar(char *Q1, ...);
 
-#endif 
+#endif
