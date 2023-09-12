@@ -4,7 +4,7 @@
  * The program should return 0
  * Return:Always 0 (Success)
  */
-char main(A)
+int main(void)
 {
 	_putchar('_');
 	_putchar('p');
@@ -15,5 +15,5 @@ char main(A)
 	_putchar('a');
 	_putchar('r');
 	_putchar('\n');
-	return (A);
+	return (0);
 }
