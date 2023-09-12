@@ -4,9 +4,9 @@
  * @Q1:The character to print
  * Return:1 if successful, -1 if unsuccessful
  */
-char _putchar(char *Q1, ...)
+char _putchar(char Q)
 {
 
-	return (write(1, &Q1, 1));
+	return (write(1, &Q, 1));
 }
 
