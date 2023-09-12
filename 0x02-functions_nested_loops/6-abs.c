@@ -7,6 +7,6 @@
  */
 int _abs(int Q)
 {
-	if (Q < 0 || Q = 0 || Q > 0)
+	if ((Q < 0 || Q == 0) || Q > 0)
 		putchar(Q);
 }
