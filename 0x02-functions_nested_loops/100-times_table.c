@@ -13,9 +13,9 @@ void print_times_table(int n)
 
 	if (n > 15 || n < 0)
 		return;
-	while (Q <= n)
+	while (n >= Q)
 	{
-		for (R = 0; R <= n; R++)
+		for (R = 0; n >= R; R++)
 		{
 			S = Q * R;
 			if (S > 99)
@@ -39,7 +39,7 @@ void print_times_table(int n)
 			else
 				_putchar(S + '0');
 
-			if (R != n)
+			if (n != R)
 			{
 				_putchar(',');
 				_putchar(' ');
