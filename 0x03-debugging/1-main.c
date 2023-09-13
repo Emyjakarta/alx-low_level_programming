@@ -13,7 +13,7 @@ int main(void)
 
 	i = 0;
 	/**
-	*while (i < 10) cobdition will always be true
+	*while (i < 10) condition will always be true
 	*{
 	*	putchar(i);
 	*}
