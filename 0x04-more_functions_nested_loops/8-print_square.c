@@ -24,11 +24,11 @@ void print_square(int size)
 			for (R = 0; size > R; R++)
 			{
 				if (R == Q)
-					putchar('#');
+					_putchar('#');
 				else
-					putchar ('#');
+					_putchar ('#');
 			}
-			putchar('\n');
+			_putchar('\n');
 		}
 	}
 }
