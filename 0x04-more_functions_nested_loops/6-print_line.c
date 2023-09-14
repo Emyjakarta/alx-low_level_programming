@@ -12,7 +12,7 @@ void print_line(int n)
 	int n;
 	char Q = '_';
 
-	for (n = 0; n <= 10; n++)
+	for (n = -5; n <= 10; n++)
 	{
 		if (n > 0)
 		{
