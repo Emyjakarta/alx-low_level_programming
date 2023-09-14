@@ -16,12 +16,12 @@ void print_line(int n)
 	{
 		if (n > 0)
 		{
-			putchar(Q);
+			_putchar(Q);
 		}
 		else
 		{
-			 putchar('\n');
+			 _putchar('\n');
 		}
 	}
-	putchar('\n');
+	_putchar('\n');
 }
