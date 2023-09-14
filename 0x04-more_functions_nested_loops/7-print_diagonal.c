@@ -11,6 +11,7 @@
 void print_diagonal(int n)
 {
 	int Q;
+	int R;
 
 	if (n <= 0)
 	{
@@ -20,8 +21,11 @@ void print_diagonal(int n)
 	{
 		for (Q = 1; n > Q; Q++)
 		{
-			_putchar(' ');
-			_putchar('\\');
+			for (R = 1; n > R; R++)
+			{
+				_putchar(' ');
+				_putchar('\\');
+			}
 		}
 		_putchar('\n');
 	}
