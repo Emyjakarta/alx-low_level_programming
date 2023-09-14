@@ -12,7 +12,7 @@ int main(void)
 
 	Q = 0;
 	R = 1;
-	unsigned long Total = 0;
+	long Total = 0;
 
 	for (i = 0; i < 33; i++)
 	{
