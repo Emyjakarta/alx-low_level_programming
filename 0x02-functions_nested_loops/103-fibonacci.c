@@ -26,10 +26,6 @@ int main(void)
 		{
 			Total += S;
 		}
-		if (i == 32)
-		{
-			printf("\n");
-		}
 
 	}
 
