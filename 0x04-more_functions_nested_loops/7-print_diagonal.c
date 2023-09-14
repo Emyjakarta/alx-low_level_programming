@@ -23,13 +23,12 @@ void print_diagonal(int n)
 		{
 			for (R = 1; n > R; R++)
 			{
-				_putchar(' ');
-				_putchar('\\');
-
-				if (n - 1 == Q)
-				continue;
+				if (R == Q)
+					_putchar('\\');
+				else if (R < Q)
+					_putchar(' ');
 			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
