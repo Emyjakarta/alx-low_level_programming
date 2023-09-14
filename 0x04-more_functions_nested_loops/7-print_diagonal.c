@@ -25,6 +25,9 @@ void print_diagonal(int n)
 			{
 				_putchar(' ');
 				_putchar('\\');
+
+				if (n - 1 == Q)
+				continue;
 			}
 		}
 		_putchar('\n');
