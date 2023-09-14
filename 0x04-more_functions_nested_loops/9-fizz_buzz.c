@@ -13,20 +13,22 @@ int main(void)
 
 	for (Q = 1; Q <= 100; Q++)
 	{
-		if ((Q % 3) == 0 && (Q % 5) == 0)
+		if ((Q % 15) == 0)
 		{
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		}
 		else if ((Q % 3) == 0)
 		{
-			printf("Fizz ");
+			printf("Fizz");
 		}
 		else if ((Q % 5) == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
 		}
 		else
-			printf("%i ", Q);
+			printf("%i", Q);
+		if (Q != 100)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
