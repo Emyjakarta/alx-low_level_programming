@@ -9,10 +9,10 @@ int main(void)
 {
 	int i;
 	unsigned long Q, R, S, T;
+	unsigned long Total = 0;
 
 	Q = 0;
 	R = 1;
-	long Total = 0;
 
 	for (i = 0; i < 33; i++)
 	{
