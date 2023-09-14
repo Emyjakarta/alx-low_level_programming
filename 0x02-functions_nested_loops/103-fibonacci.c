@@ -33,6 +33,6 @@ int main(void)
 
 	}
 
-	printf("%lu\n", Total);
+	printf("%lu", Total);
 	return (0);
 }
