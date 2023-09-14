@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	unsigned long Q;
+	int Q;
 
 	for (Q = 1; Q <= 100; Q++)
 	{
@@ -26,7 +26,7 @@ int main(void)
 			printf("Buzz ");
 		}
 		else
-			printf("%lu ", Q);
+			printf("%i ", Q);
 	}
 	printf("\n");
 	return (0);
