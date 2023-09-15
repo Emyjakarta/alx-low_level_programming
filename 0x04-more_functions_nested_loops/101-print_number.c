@@ -22,5 +22,5 @@ void print_number(int n)
 	{
 		print_number(Q / 10)
 	}
-	_putchar('0' + (Q % 10));
+	_putchar((Q % 10) + '0');
 }
