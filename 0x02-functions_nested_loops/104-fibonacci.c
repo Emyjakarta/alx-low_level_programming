@@ -6,47 +6,36 @@
  */
 int main(void)
 {
-	int i;
-	unsigned long Q, R, S;
+	unsigned long i, Q, R, Q1, Q2, R1, R2;
 	unsigned long Qhalf1, Qhalf2, Rhalf1, Rhalf2;
-	unsigned long half1, half2;
 
-	Q = 0;
-	R = 1;
+	Q = 1;
+	R = 2;
 
-	for (i = 0; i < 92; i++)
+	printf("%lu", Q);
+
+	for (i = 1; i < 91; i++)
 	{
-		S = Q + R;
-		printf("%lu, ", S);
-
-		Q = R;
-		R = S;
+		printf(", %lu", R);
+		R = R + Q;
+		Q = R - Q;
 	}
 
-		Qhalf1 = Q / 10000000000;
-		Rhalf1 = R / 10000000000;
-		Qhalf2 = Q / 10000000000;
-		Rhalf2 = R / 10000000000;
+		Q1 = Q / 1000000000;
+		Q2 = Q % 1000000000;
+		R1 = R / 1000000000;
+		R2 = R % 1000000000;
 
-		for (i = 93; i < 99; i++)
+		for (i = 92; i < 99; ++i)
 		{
-			half1 = Qhalf1 + Rhalf1;
-			half2 = Qhalf2 + Rhalf2;
-			if (Qhalf2 + Rhalf2 > 9999999999)
-			{
-				half1 += 1;
-				half2 %= 10000000000;
-			}
-
-			printf("%lu%lu", half1, half2);
-			if (i != 98)
-				printf(", ");
-
-			Qhalf1 = Rhalf1;
-			Qhalf2 = Rhalf2;
-			Rhalf1 = half1;
-			Rhalf2 = half2;
+			printf(", %lu", R1 + (R2 / 1000000000));
+			printf("%lu", R2 % 1000000000);
+			R1 = R1 + Q1;
+			Q1 = R1 - Q1;
+			R2 = R2 + Q2;
+			Q2 = R2 - Q2;
 		}
+
 		printf("\n");
 		return (0);
 }
