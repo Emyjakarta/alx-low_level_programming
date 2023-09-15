@@ -39,7 +39,7 @@ int main(void)
 		{
 			half1 = Qhalf1 + Rhalf1;
 			half2 = Qhalf2 + Rhalf2;
-			if (Qhalf2 + Rhalf > 9999999999)
+			if (Qhalf2 + Rhalf2 > 9999999999)
 			{
 				half1 += 1;
 				half2 %= 10000000000;
