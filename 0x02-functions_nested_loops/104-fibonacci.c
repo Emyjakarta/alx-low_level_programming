@@ -7,7 +7,6 @@
 int main(void)
 {
 	unsigned long i, Q, R, Q1, Q2, R1, R2;
-	unsigned long Qhalf1, Qhalf2, Rhalf1, Rhalf2;
 
 	Q = 1;
 	R = 2;
