@@ -10,8 +10,9 @@
  */
 void print_number(int n)
 {
-	unsigned int Q = n;
+	unsigned int Q;
 
+	Q = n;
 	if (n < 0)
 	{
 		_putchar('-');
@@ -19,7 +20,7 @@ void print_number(int n)
 	}
 	if (Q / 10)
 	{
-		print_number(Q / 10)
+		print_number(Q / 10);
 	}
-	_putchar((Q % 10) + '0');
+	_putchar('0' + (Q % 10));
 }
