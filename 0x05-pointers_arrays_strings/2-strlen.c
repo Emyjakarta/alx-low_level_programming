@@ -12,5 +12,5 @@ int _strlen(char *s)
 	{
 		Q++;
 	}
-	return Q;
+	return (Q);
 }
