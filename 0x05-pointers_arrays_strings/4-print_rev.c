@@ -8,11 +8,11 @@
 void print_rev(char *s)
 {
 	int Q;
+	int R;
 
 	for (Q = 0; s[Q] != '\0'; Q++)
 	{
 	}
-	int R;
 
 	for (R = Q - 1; R >= 0; R--)
 	{
