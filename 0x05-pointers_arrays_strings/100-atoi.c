@@ -39,6 +39,7 @@ int _atoi(char *s)
 		{
 			break;
 		}
+	
 	*s++;
 	}
 	return (res * plusorminus);
