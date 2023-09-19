@@ -18,28 +18,22 @@ int _atoi(char *s)
 {
 	int number = 0;
 	int plusorminus = 1;
-	int res = 0;
 
 	do
 	{
 		if (*s == '-')
 		{
-			plusorminus = -1;
-		}
-		else if (*s == '+')
-		{
-			plusorminus = 1;
+			plusorminus *= -1;
 		}
 		else if (*s >= '0' && *s <= '9')
 		{
-			number = 1;
-			res = (res * 10) + (*s - '0');
+			number = (number * 10) + (*s - '0');
 		}
-		else if (number)
+		else if (number > 0)
 		{
 			break;
 		}
 	}
 	while (*s++);
-	return (res * plusorminus);
+	return (number * plusorminus);
 }
