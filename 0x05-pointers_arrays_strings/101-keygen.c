@@ -9,10 +9,10 @@
  */
 int main(void)
 {
-	int password[64], Q, sum = 0, R;
+	int password[150], Q, sum = 0, R;
 
 	srand(time(NULL));
-	for (Q = 0; Q < 64; Q++)
+	for (Q = 0; Q < 150; Q++)
 	{
 		password[Q] = rand() % 78;
 		sum += password[Q] + '0';
