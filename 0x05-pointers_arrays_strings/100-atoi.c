@@ -16,11 +16,10 @@
  */
 int _atoi(char *s)
 {
-	int number = 0;
+	unsigned int number = 0;
 	int plusorminus = 1;
 
-	do
-	{
+	do {
 		if (*s == '-')
 		{
 			plusorminus *= -1;
@@ -33,7 +32,6 @@ int _atoi(char *s)
 		{
 			break;
 		}
-	}
-	while (*s++);
+	} while (*s++);
 	return (number * plusorminus);
 }
