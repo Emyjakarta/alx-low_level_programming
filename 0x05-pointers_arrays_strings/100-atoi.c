@@ -20,7 +20,7 @@ int _atoi(char *s)
 	int plusorminus = 1;
 	int res = 0;
 
-	while (*s)
+	do
 	{
 		if (*s == '-')
 		{
@@ -39,8 +39,7 @@ int _atoi(char *s)
 		{
 			break;
 		}
-	
-	*s++;
 	}
+	while (*s++);
 	return (res * plusorminus);
 }
