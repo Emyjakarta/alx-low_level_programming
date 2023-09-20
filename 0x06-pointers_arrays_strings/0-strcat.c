@@ -22,9 +22,5 @@ char *_strcat(char *dest, char *src)
 		Q++;
 	}
 	dest[Q] = '\0';
-	for (Q = 0; dest[Q] != '\0'; Q++)
-	{
-		_putchar(dest[Q]);
-	}
 	return (dest);
 }
