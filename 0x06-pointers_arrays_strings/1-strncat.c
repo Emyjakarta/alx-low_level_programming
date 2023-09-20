@@ -17,16 +17,13 @@ char *_strncat(char *dest, char *src, int n)
 	for (Q = 0; dest[Q] != '\0'; Q++)
 	{
 	}
-	while (src[R] != '\0')
+	while (src[R] != '\0' && n > 0)
 	{
-		if(src[R] == n)
-		{	
-			break;
-		}
-			dest[Q] = src[R];
-			Q++;
-			R++;
-		
+		dest[Q] = src[R];
+		Q++;
+		R++;
+		n--;
+
 	}
 	dest[Q] = '\0';
 	return (dest);
