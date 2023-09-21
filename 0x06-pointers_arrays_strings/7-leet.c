@@ -16,6 +16,7 @@ char *leet(char *Q)
 
 	R = 0;
 	S = 0;
+
 	while (Q[R] != '\0')
 	{
 		while (alpha[S] != '\0')
