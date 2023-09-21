@@ -21,9 +21,7 @@ char *leet(char *Q)
 		while (alpha[S] != '\0')
 		{
 			if (Q[R] == alpha[S])
-			{
 				Q[R] = update[S];
-			}
 			S++;
 		}
 		S = 0;
