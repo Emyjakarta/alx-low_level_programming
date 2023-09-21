@@ -10,28 +10,28 @@
  */
 char *rot13(char *Q)
 {
-	char initial[] = Q;
-	char latest[] = Q;
+	char *initial = Q;
+	char *latest = Q;
 
-	while (initial[])
+	while (*initial)
 	{
-		if ((initial[] >= 'a' && initial[] <= 'm')
-				|| (initial[] >= 'A' && initial[] <= 'M'))
+		if ((*initial >= 'a' && *initial <= 'm')
+				|| (*initial >= 'A' && *initial <= 'M'))
 		{
-			latest[] = initial[] +13;
+			*latest = *initial + 13;
 		}
-		else if ((initial[] >= 'n' && initial[] <= 'z')
-				|| (initial[] >= 'N' && initial[] <= 'Z'))
+		else if ((*initial >= 'n' && *initial <= 'z')
+				|| (*initial >= 'N' && *initial <= 'Z'))
 		{
-			latest[] = initial[] -13;
+			*latest = *initial - 13;
 		}
 		else
 		{
-			latest[] = initial[];
+			*latest = *initial;
 		}
 		initial++;
 		latest++;
 	}
-	latest[] = '\0';
+	*latest = '\0';
 	return (Q);
 }
