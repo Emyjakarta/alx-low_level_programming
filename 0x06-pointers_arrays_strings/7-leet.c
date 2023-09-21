@@ -10,24 +10,24 @@
  */
 char *leet(char *Q)
 {
-	int R, S;
-	char *alpha = "aEeEoOtTlL";
-	char *update = "4433007711";
+	int R, S, T;
+	char alpha[] = "aAeEoOtTlL";
+	char update[] = "4433007711";
 
 	R = 0;
-	S = 0;
-
 	while (Q[R] != '\0')
 	{
+		S = 0;
+		T = 0;
 		while (alpha[S] != '\0')
 		{
 			if (Q[R] == alpha[S])
 			{
-				Q[R] = update[S];
+				T = S;
+				Q[R] = update[T];
 			}
 			S++;
 		}
-		S = 0;
 		R++;
 	}
 	return (Q);
