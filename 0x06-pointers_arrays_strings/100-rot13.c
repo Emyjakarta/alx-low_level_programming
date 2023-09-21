@@ -15,19 +15,24 @@ char *rot13(char *Q)
 
 	while (*initial != '\0')
 	{
-		if ((*initial >= 'a' && *initial <= 'm')
+		while (*latest != '\0')
+		{
+			if ((*initial >= 'a' && *initial <= 'm')
 				|| (*initial >= 'A' && *initial <= 'M'))
-		{
-			*latest = *initial + 13;
-		}
-		else if ((*initial >= 'n' && *initial <= 'z')
+			{
+				*latest = *initial + 13;
+			}
+			else if ((*initial >= 'n' && *initial <= 'z')
 				|| (*initial >= 'N' && *initial <= 'Z'))
-		{
-			*latest = *initial - 13;
-		}
-		else
-		{
-			*latest = *initial;
+			{
+				*latest = *initial - 13;
+			}
+			else
+			{
+				*latest = *initial;
+			}
+			initial++;
+			latest++;
 		}
 		initial++;
 		latest++;
