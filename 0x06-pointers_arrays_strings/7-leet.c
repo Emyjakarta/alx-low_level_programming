@@ -23,8 +23,8 @@ char *leet(char *Q)
 			if (Q[R] == alpha[S])
 			{
 				Q[R] = update[S];
-				S++;
 			}
+			S++;
 		}
 		S = 0;
 		R++;
