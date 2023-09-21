@@ -13,7 +13,7 @@ char *rot13(char *Q)
 	char *initial = Q;
 	char *latest = Q;
 
-	while (*initial)
+	while (*initial != '\0')
 	{
 		if ((*initial >= 'a' && *initial <= 'm')
 				|| (*initial >= 'A' && *initial <= 'M'))
