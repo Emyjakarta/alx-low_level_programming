@@ -32,4 +32,3 @@ char *leet(char *Q)
 	}
 	return (Q);
 }
-i
