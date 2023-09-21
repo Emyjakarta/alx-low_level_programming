@@ -7,8 +7,8 @@
 char *leet(char *Q)
 {
 	int R, S;
-	char *alpha = "aAeEoOtTlL";
-	char *update = "4433007711";
+	char alpha[] = "aAeEoOtTlL";
+	char update[] = "4433007711";
 
 	R = 0;
 
