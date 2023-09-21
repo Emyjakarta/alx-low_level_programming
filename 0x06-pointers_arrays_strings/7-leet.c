@@ -11,8 +11,8 @@
 char *leet(char *Q)
 {
 	int R, S;
-	char alpha[] = "aEeEoOtTlL";
-	char update[] = "4433007711";
+	char *alpha = "aEeEoOtTlL";
+	char *update = "4433007711";
 
 	R = 0;
 	S = 0;
