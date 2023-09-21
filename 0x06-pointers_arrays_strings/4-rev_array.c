@@ -11,7 +11,7 @@ void reverse_array(int *a, int n)
 	int Q = 0;
 	n = n - 1;
 
-	while (Q < R)
+	while (Q < n)
 	{
 		int temporal = a[Q];
 		a[Q] = a[n];
