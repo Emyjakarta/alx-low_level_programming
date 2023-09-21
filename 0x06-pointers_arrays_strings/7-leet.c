@@ -15,21 +15,20 @@ char *leet(char *Q)
 	char update[] = "4433007711";
 
 	R = 0;
+	S = 0;
 	while (Q[R] != '\0')
 	{
-		S = 0;
-		T = 0;
 		while (alpha[S] != '\0')
 		{
 			if (Q[R] == alpha[S])
 			{
-				T = S;
 				Q[R] = update[T];
 			}
 			S++;
 		}
+		S = 0;
 		R++;
 	}
 	return (Q);
 }
-
+i
