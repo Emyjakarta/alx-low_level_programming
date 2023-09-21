@@ -26,7 +26,9 @@ char *rot13(char *Q)
 				Q[R] = latest[S];
 				break;
 			}
+			S++;
 		}
+		R++;
 	}
 	return (Q);
 }
