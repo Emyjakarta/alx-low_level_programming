@@ -6,7 +6,7 @@
  * You are not allowed to use long
  * You are not allowed to use arrays or pointers
  * You are not allowed to hard-code special values
- * Return:Integer
+ * Return:void
  */
 void print_number(int n)
 {
