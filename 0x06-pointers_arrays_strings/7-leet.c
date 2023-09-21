@@ -25,7 +25,6 @@ char *leet(char *Q)
 				Q[R] = update[S];
 				S++;
 			}
-			S++;
 		}
 		S = 0;
 		R++;
