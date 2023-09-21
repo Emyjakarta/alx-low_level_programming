@@ -4,7 +4,7 @@
  * @s1: first string variable
  * @s2: secod string variable
  * Your function should work exactly like strcmp
- * Return:Their difference
+ * Return:Their difference and zero at the end
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -16,6 +16,7 @@ int _strcmp(char *s1, char *s2)
 		{
 			return (s1[Q] - s2[Q]);
 		}
+		Q++;
 	}
 	return (0);
 }
