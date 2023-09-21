@@ -9,15 +9,15 @@
 void reverse_array(int *a, int n)
 {
 	int Q = 0;
-	int R = n - 1;
+	n = n - 1;
 
 	while (Q < R)
 	{
 		int temporal = a[Q];
-		a[Q] = a[R];
-		a[R] = temporal;
+		a[Q] = a[n];
+		a[n] = temporal;
 		Q++;
-		R--;
+		n--;
 	}
 
 
