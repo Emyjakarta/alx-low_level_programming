@@ -10,7 +10,7 @@
  */
 char *leet(char *Q)
 {
-	int R, S, T;
+	int R, S;
 	char alpha[] = "aEeEoOtTlL";
 	char update[] = "4433007711";
 
@@ -23,7 +23,7 @@ char *leet(char *Q)
 		{
 			if (Q[R] == alpha[S])
 			{
-				Q[R] = update[T];
+				Q[R] = update[S];
 			}
 			S++;
 		}
