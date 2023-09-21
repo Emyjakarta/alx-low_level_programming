@@ -7,4 +7,5 @@
  * You are not allowed to use switch
  * You are not allowed to use any ternary operation
  * Return: The updated string
- *
+ */
+
