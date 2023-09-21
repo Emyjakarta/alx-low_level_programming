@@ -10,25 +10,19 @@
  */
 char *leet(char *Q)
 {
-	int R, S, T;
+	int R, S;
 	char alpha[] = "aAeEoOtTlL";
 	char update[] = "4433007711";
 
-	R = 0;
-	while (Q[R] != '\0')
+	for (R = 0; Q[R] != '\0'; R++)
 	{
-		S = 0;
-		T = 0;
-		while (alpha[S] != '\0')
+		for (S = 0; S < 10; S++)
 		{
 			if (Q[R] == alpha[S])
 			{
-				T = S;
-				Q[R] = update[T];
+				Q[R] = update[S];
 			}
-			S++;
 		}
-		R++;
 	}
 	return (Q);
 }
