@@ -6,7 +6,7 @@
  * You can only use two loops in your code
  * You are not allowed to use switch
  * You are not allowed to use any ternary operation
- * Return: The updated string
+ * Return:The updated string
  */
 char *leet(char *Q)
 {
