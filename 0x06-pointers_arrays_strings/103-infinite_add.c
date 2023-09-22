@@ -34,7 +34,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	Q -= 1;
 	R -= 1;
 	S  = 0;
-	while (S < size_r - 1)
+	while (size_r - 1 > S)
 	{
 		V = U;
 		if (Q >= 0)
