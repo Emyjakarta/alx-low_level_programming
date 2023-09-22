@@ -18,22 +18,13 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	Q = 0;
 	while (n1[Q])
-	{
 		Q++;
-	}
 	R = 0;
 	while (n2[R])
-	{
 		R++;
-	}
 	if (Q > size_r || R > size_r)
-	{
 		return (0);
-	}
-	U = 0;
-	Q -= 1;
-	R -= 1;
-	S  = 0;
+	U = 0, Q -= 1, R -= 1, S  = 0;
 	while (size_r - 1 > S)
 	{
 		V = U;
@@ -42,11 +33,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		if (R >= 0)
 			V += n2[R] - '0';
 		if (Q < 0 && R < 0 && V == 0)
-		{
 			break;
-		}
-		U = V / 10;
-		r[S] = V % 10 + '0';
+		U = V / 10, r[S] = V % 10 + '0';
 		Q--;
 		R--;
 		S++;
@@ -58,9 +46,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	T = 0;
 	while (T < S)
 	{
-		U = r[S];
-		r[S] = r[T];
-		r[T] = U;
+		U = r[S], r[S] = r[T], r[T] = U;
 		S--;
 		T++;
 	}
