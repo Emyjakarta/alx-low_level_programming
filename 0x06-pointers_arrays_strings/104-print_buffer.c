@@ -47,7 +47,7 @@ void print_buffer(char *b, int size)
 		R = 0;
 		while (R < S)
 		{
-			int T = *(b + Q + R);
+			T = *(b + Q + R);
 
 			if (T < 32 || T > 132)
 			{
