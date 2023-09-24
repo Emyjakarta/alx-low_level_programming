@@ -10,33 +10,25 @@
  */
 char *rot13(char *Q)
 {
-	char *initial = Q;
-	char *latest = Q;
+	int R = 0;
+	int S;
 
-	while (*initial != '\0')
+	char initial[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char latest[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	while (Q[R] != '\0')
 	{
-		while (*latest != '\0')
+		S = 0;
+		while (initial[S] != '\0')
 		{
-			if ((*initial >= 'a' && *initial <= 'm')
-				|| (*initial >= 'A' && *initial <= 'M'))
+			if (Q[R] == initial[S])
 			{
-				*latest = *initial + 13;
+				Q[R] = latest[S];
+				break;
 			}
-			else if ((*initial >= 'n' && *initial <= 'z')
-				|| (*initial >= 'N' && *initial <= 'Z'))
-			{
-				*latest = *initial - 13;
-			}
-			else
-			{
-				*latest = *initial;
-			}
-			initial++;
-			latest++;
+			S++;
 		}
-		initial++;
-		latest++;
+		R++;
 	}
-	*latest = '\0';
 	return (Q);
 }
