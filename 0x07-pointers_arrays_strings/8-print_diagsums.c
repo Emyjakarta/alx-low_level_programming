@@ -15,7 +15,7 @@ void print_diagsums(int *a, int size)
 	while (size > Q)
 	{
 		add1 += *(a + Q * size + Q);
-		add2 += *(a + Q * size + (size - i - 1));
+		add2 += *(a + Q * size + (size - Q - 1));
 		Q++;
 	}
 	printf("Sum of the first diagonal = %i\n", add1);
