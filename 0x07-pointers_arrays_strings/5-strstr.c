@@ -12,6 +12,7 @@ char *_strstr(char *haystack, char *needle)
 
 	Q = 0;
 	S = 0;
+
 	while (haystack[Q] != '\0')
 	{
 		R = 0;
