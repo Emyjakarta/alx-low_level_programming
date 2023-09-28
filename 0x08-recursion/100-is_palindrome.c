@@ -1,20 +1,18 @@
 #include "main.h"
-#include <unistd.h>
 /**
  * is_pali_recursive-recursive helper function
  * @s: string
- * @begin: first pointer
- * @finish: second pointer that transverse the string and checks
- * if it's a palindrome
+ * @begin: checks the length of s
  * Return:1 if palindrome else 0.
  */
-int is_pali_recursive(char *s, int begin, int finish)
+int is_pali_recursive(char *s, int begin)
 {
-	if (begin >= finish)
+	if (begin <= 1)
 		return (1);
-	if (s[begin] != s[finish])
+	if (*s == *(s + begin - 1))
+		return (is_pali_recursive(s + 1, begin - 2));
+	else
 		return (0);
-	return (is_pali_recursive(s, begin + 1, finish - 1));
 }
 /**
  * is_palindrome-main function that calls the recursive helper function
@@ -24,8 +22,10 @@ int is_pali_recursive(char *s, int begin, int finish)
  */
 int is_palindrome(char *s)
 {
-	if (s == NULL)
-		return (0);
-	int length = _strlen_recursion(s);
-	return (is_palindrome(s, 0, length - 1));
+	int begin;
+
+	begin = _strlen_recursion(s);
+	if (begin <= 1)
+		return (1);
+	return (is_pali_recursive(s, begin));
 }
