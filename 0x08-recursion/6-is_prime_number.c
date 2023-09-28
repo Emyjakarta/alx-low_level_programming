@@ -2,6 +2,7 @@
 /**
  * is_divisib-a function that recursively checks if n is
  * divisible by any number starting from Q down to 2
+ * @n: number to be checked
  * @Q: divisor
  * Return:0 if Q == 1, else return 1
  */
