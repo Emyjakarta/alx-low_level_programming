@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * is_pali_recursive-recursive helper function
  * @s: string
@@ -25,5 +26,6 @@ int is_palindrome(char *s)
 {
 	if (s == NULL)
 		return (0);
-	int length = _strlen_recursion(s, 0, length - 1);
+	int length = _strlen_recursion(s);
+	return (is_palindrome(s, 0, length - 1));
 }
