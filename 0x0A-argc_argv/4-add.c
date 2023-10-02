@@ -16,10 +16,11 @@
 int main(int argc, char **argv)
 {
 	int Q, R, Add;
+
 	Q = 1;
 	Add = 0;
 
-	while (Q < argc)
+	while (argc > Q)
 	{
 		R = 0;
 		while (argv[Q][R])
