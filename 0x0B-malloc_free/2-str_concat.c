@@ -19,7 +19,7 @@ char *str_concat(char *s1, char *s2)
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
-		s2 == "";
+		s2 = "";
 	while (s1[Q] != '\0')
 	{
 		Q++;
@@ -32,13 +32,13 @@ char *str_concat(char *s1, char *s2)
 	ptr = malloc(length);
 	if (ptr == NULL)
 		return (NULL);
-	while (s < Q)
+	while (S < Q)
 	{
 		ptr[S] = s1[S];
 	}
 	while (T < R)
 	{
-		ptr[S] = s2[T]
+		ptr[S] = s2[T];
 	}
 	ptr[length] = s2[T];
 	return (ptr);
