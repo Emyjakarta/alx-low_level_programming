@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
 /**
  * _strdup-a function that returns a pointer to a newly
  * allocated space in memory, which contains a copy of
@@ -17,19 +16,27 @@
  */
 char *_strdup(char *str)
 {
-	size_t length = strlen(str) + 1;
 	char *ptr;
+	int R = 0, S = 0;
 
-	ptr = malloc(length * sizeof(*ptr));
+	ptr = malloc(R * sizeof(*ptr) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
+	}
+	while (str[R] != '\0')
+	{
+		R++;
 	}
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	strcpy(ptr, str);
+	while (S < R)
+	{
+		ptr[S] = str[S];
+		S++;
+	}
+	ptr[S] = '\0';
 	return (ptr);
-	free(ptr);
 }
