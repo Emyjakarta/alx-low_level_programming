@@ -20,7 +20,7 @@ char *_strdup(char *str)
 	size_t length = strlen(str) + 1;
 	char *ptr;
 
-	ptr = malloc(length * sizeof(char));
+	ptr = malloc(length * sizeof(*ptr));
 	if (str == NULL)
 	{
 		return (NULL);
@@ -31,4 +31,5 @@ char *_strdup(char *str)
 	}
 	strcpy(ptr, str);
 	return (ptr);
+	free(ptr);
 }
