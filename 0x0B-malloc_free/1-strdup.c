@@ -19,7 +19,6 @@ char *_strdup(char *str)
 	char *ptr;
 	int R = 0, S = 0;
 
-	ptr = malloc(R * sizeof(*ptr) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
@@ -28,6 +27,7 @@ char *_strdup(char *str)
 	{
 		R++;
 	}
+	ptr = malloc(R * sizeof(*ptr) + 1);
 	if (ptr == NULL)
 	{
 		return (NULL);
