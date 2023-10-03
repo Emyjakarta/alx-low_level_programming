@@ -8,41 +8,39 @@
  * Each element of the grid should be initialized to 0
  * The function should return NULL on failure
  * If width or height is 0 or negative, return NULL
- * Return:grid
+ * Return:ptr
  */
 int **alloc_grid(int width, int height)
 {
 	int Q = 0, R;
-	int **grid = NULL;
+	int **ptr = NULL;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	grid = malloc(height * sizeof(int *));
+	ptr = malloc(height * sizeof(int *));
 
-	if (grid == NULL)
+	if (ptr == NULL)
 		return (NULL);
 	while (height > Q)
 	{
-		grid[Q] = malloc(width * sizeof(int));
+		ptr[Q] = malloc(width * sizeof(int));
 		R = 0;
-		if (grid[Q] == NULL)
+		if (ptr[Q] == NULL)
 		{
 			while (R < Q)
-			{	free(grid[R]);
-				Q++;
+			{	free(ptr[R]);
 				R++;
 			}
-			free(grid);
-			Q++;
+			free(ptr);
 			return (NULL);
 		}
 		R = 0;
 		while (width > R)
 		{
-			grid[Q][R] = 0;
+			ptr[Q][R] = 0;
 			R++;
 		}
-
+		Q++;
 	}
-	return (grid);
+	return (ptr);
 }
