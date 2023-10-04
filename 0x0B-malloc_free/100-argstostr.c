@@ -12,38 +12,39 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int Q = 0, overall_length = ac, length_av = 0, post = 0;
-	char *new_string;
+	int Q = 0, overall_length, length_av = 0, post = 0;
+	char *ptr, *new_string;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 	while (ac > Q)
 	{
 		length_av = 0;
-		while (av[Q][length_av])
+		while (av[Q][length_av] != '\0')
 		{
 			length_av++;
 			overall_length++;
 		}
-		new_string = malloc(sizeof(char) * overall_length + 1);
+		overall_length++;
 		Q++;
 	}
-	if (new_string == NULL)
+	overall_length++;
+	ptr = malloc(overall_length * sizeof(char));
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
+	new_string = ptr;
 	Q = 0;
-	post = 0;
 	while (ac > Q)
 	{
 		length_av = 0;
-		while (av[Q][length_av])
+		while (av[Q][length_av] != '\0')
 		{
-			new_string[post++] = av[Q][length_av++];
+			*ptr = av[Q][length_av];
 		}
-		new_string[post++] = '\n';
-		Q++;
+		*ptr = '\n';
+		ptr++;
 	}
-	new_string[overall_length] = '\0';
 	return (new_string);
 }
