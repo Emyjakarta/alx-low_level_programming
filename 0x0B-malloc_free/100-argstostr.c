@@ -12,7 +12,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int Q = 0, overall_length = ac, length_av = 0, post = 0;
+	int Q = 0, overall_length = ac - 1, length_av = 0, post = 0;
 	char *new_string;
 
 	if (ac == 0 || av == NULL)
@@ -27,7 +27,7 @@ char *argstostr(int ac, char **av)
 		}
 		Q++;
 	}
-	new_string = malloc(sizeof(char) * overall_length + 1);
+	new_string = malloc(sizeof(char) * (overall_length + 1));
 	if (new_string == NULL)
 	{
 		return (NULL);
@@ -39,8 +39,7 @@ char *argstostr(int ac, char **av)
 		length_av = 0;
 		while (av[Q][length_av])
 		{
-			new_string[post++] = av[Q][length_av];
-			length_av++;
+			new_string[post++] = av[Q][length_av++];
 		}
 		new_string[post++] = '\n';
 	}
