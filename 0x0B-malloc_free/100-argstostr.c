@@ -43,7 +43,6 @@ char *argstostr(int ac, char **av)
 			new_string[post++] = av[Q][length_av];
 			length_av++;
 		}
-		new_string[post++] = '\n';
 		Q++;
 	}
 	new_string[post] = '\0';
