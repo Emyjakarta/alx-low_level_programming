@@ -23,7 +23,7 @@ char *argstostr(int ac, char **av)
 		{
 			length_av++;
 		}
-		overall_Length += length_av + 1
+		Overall_Length += length_av + 1
 		Q++;
 		length_av = 0;
 	}
