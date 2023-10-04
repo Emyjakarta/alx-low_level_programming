@@ -43,12 +43,9 @@ char *argstostr(int ac, char **av)
 			new_string[post++] = av[Q][length_av];
 			length_av++;
 		}
-		if (ac - 1 > Q)
-		{
-			new_string[post++] = '\n';
-		}
+		new_string[post++] = '\n';
 		Q++;
 	}
-	new_string[post] = '\0';
+	new_string[post + 1] = '\0';
 	return (new_string);
 }
