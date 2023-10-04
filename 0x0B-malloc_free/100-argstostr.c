@@ -12,7 +12,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int Q = 0, Overall_Length = 0, length_av = 0, post = 0;
+	int Q = 0, length_av = 0, post = 0;
 	char *new_string;
 
 	if (ac == 0 || av == NULL)
@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 			length_av++;
 			ac++;
 		}
-		new_string = malloc(sizeof(char) * size + 1);
+		new_string = malloc(sizeof(char) * ac + 1);
 		Q++;
 	}
 	if (new_string == NULL)
