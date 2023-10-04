@@ -46,5 +46,4 @@ char *argstostr(int ac, char **av)
 	}
 	new_string[overall_length] = '\0';
 	return (new_string);
-	free(new_string);
 }
