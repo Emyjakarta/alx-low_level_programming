@@ -37,7 +37,7 @@ int wordcount(char *str)
  */
 char **strtow(char *str)
 {
-	int nword, wrdcnt, wrdlen;
+	int nword, wrdcnt, wrdlen, i;
 	char **wrds;
 
 	if (str == NULL || *str == '\0')
@@ -57,18 +57,16 @@ char **strtow(char *str)
 				wrds[wrdcnt] = (char *)malloc((wrdlen + 1) * sizeof(char));
 				if (wrds[wrdcnt] == NULL)
 				{
-					for (int i = 0; i < wrdcnt; i++)
+					for (i = 0; i < wrdcnt; i++)
 					{
-						free(wrds[i];
+						free(wrds[i]);
 					}
 					free(wrds);
 					return (NULL);
 				}
-				int i;
-
 				for (i = 0; i < wrdlen; i++)
 				{
-					wrds[wrdcnt[i] = *(str - wrdlen + i);
+					wrds[wrdcnt][i] = *(str - wrdlen + i);
 				}
 				wrds[wrdcnt][i] = '\0';
 				wrdcnt++;
