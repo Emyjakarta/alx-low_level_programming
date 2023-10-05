@@ -91,11 +91,9 @@ char **strtow(char *str)
 			free(wrds);
 			return (NULL);
 		}
-		int i;
-
 		for (i = 0; i < wrdlen; i++)
 		{
-			wrds[wrdcnt[i] = *(str - wrdlen + i);
+			wrds[wrdcnt][i] = *(str - wrdlen + i);
 		}
 		wrds[wrdcnt][i] = '\0';
 		wrdcnt++;
