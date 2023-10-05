@@ -55,7 +55,7 @@ char **strtow(char *str)
 			if (wrdlen > 0)
 			{
 				wrds[wrdcnt] = (char *)malloc((wrdlen + 1) * sizeof(char));
-				if (wrds[wrdcnt] == (NULL)
+				if (wrds[wrdcnt] == NULL)
 				{
 					for (int i = 0; i < wrdcnt; i++)
 					{
@@ -86,9 +86,9 @@ char **strtow(char *str)
 		wrds[wrdcnt] = (char *)malloc((wrdlen + 1) * sizeof(char));
 		if (wrds[wrdcnt] == NULL)
 		{
-			for (int i = 0; i <= wrdcnt; i++)
+			for (i = 0; i <= wrdcnt; i++)
 			{
-				free(wrds[i];
+				free(wrds[i]);
 			}
 			free(wrds);
 			return (NULL);
