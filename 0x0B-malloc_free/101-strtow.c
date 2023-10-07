@@ -28,6 +28,24 @@ int wordcount(char *str)
 	return (cnt);
 }
 /**
+ * wordextract-extract words
+ * @start: start position of word in input string
+ * @length: length of word
+ * Return:word
+ */
+char *wordextract(char *start, int length)
+{
+	char *word = (char *)malloc((length + 1) * (sizeof(char));
+
+	if (word == NULL)
+	{
+		return (NULL);
+	}
+	strncpy(word, start, length);
+	word[length] = '\0';
+	return (word);
+}
+/**
  * strtow-a function that splits a string into words
  * The function returns a pointer to an array of strings (words)
  * @str: string
@@ -57,7 +75,7 @@ char **strtow(char *str)
 		{
 			if (wrdlen > 0)
 			{
-				wrds[wrdcnt] = (char *)malloc((wrdlen + 1) * sizeof(char));
+				wrds[wrdcnt] = wordextract(str - wrdlen, wrdlen);
 				if (wrds[wrdcnt] == NULL)
 				{
 					for (i = 0; i < wrdcnt; i++)
@@ -67,8 +85,6 @@ char **strtow(char *str)
 					free(wrds);
 					return (NULL);
 				}
-				strncpy(wrds[wrdcnt], str - wrdlen, wrdlen);
-				wrds[wrdcnt][wrdlen] = '\0';
 				wrdcnt++;
 				wrdlen = 0;
 			}
@@ -81,7 +97,7 @@ char **strtow(char *str)
 	}
 	if (wrdlen > 0)
 	{
-		wrds[wrdcnt] = (char *)malloc((wrdlen + 1) * sizeof(char));
+		wrds[wrdcnt] = wordextract(str - wrdlen, wrdlen);
 		if (wrds[wrdcnt] == NULL)
 		{
 			for (i = 0; i <= wrdcnt; i++)
@@ -91,8 +107,6 @@ char **strtow(char *str)
 			free(wrds);
 			return (NULL);
 		}
-		strncpy(wrds[wrdcnt], str - wrdlen, wrdlen);
-		wrds[wrdcnt][wrdlen] = '\0';
 		wrdcnt++;
 	}
 	wrds[wrdcnt] = NULL;
