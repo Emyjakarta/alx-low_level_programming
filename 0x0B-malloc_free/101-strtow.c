@@ -35,7 +35,7 @@ int wordcount(char *str)
  */
 char *wordextract(char *start, int length)
 {
-	char *word = (char *)malloc((length + 1) * (sizeof(char));
+	char *word = (char *)malloc((length + 1) * (sizeof(char)));
 
 	if (word == NULL)
 	{
