@@ -30,6 +30,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	size_t s1len, s2len, R;
 	char *concat, p;
 
+	s1len = lenstr(s1);
+	s2len = lenstr(s2);
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
