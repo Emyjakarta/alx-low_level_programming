@@ -106,7 +106,7 @@ char **wordpopulate(char **words, char *str, int nword)
  */
 char **strtow(char *str)
 {
-	int nword, wrdcnt, wrdlen, i;
+	int nword;
 	char **wrds;
 
 	if (str == NULL || *str == '\0')
