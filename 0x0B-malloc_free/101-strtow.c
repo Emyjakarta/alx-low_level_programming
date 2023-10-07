@@ -112,3 +112,13 @@ char **strtow(char *str)
 	wrds[wrdcnt] = NULL;
 	return (wrds);
 }
+void freewords(char **words)
+{
+	int i;
+
+	if (words == NULL)
+		return;
+	for (i = 0; words[i] != NULL; i++)
+		free(words[i]);
+	free(words);
+}
