@@ -13,6 +13,7 @@
  * calloc. Run man calloc to learn more.
  * @nmemb: elements of array
  * @size: size of bytes
+ * Return:void
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
@@ -27,9 +28,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (p == NULL)
 		return (NULL);
-	ptr2 = ptr;
+	ptr2 = p;
 	Q = 0;
-	while (Q < overallsize)
+	while (overallsize > Q)
 	{
 		ptr2[Q] = 0;
 		Q++;
