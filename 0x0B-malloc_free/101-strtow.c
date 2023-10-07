@@ -49,10 +49,9 @@ char *wordextract(char *start, int length)
  * wordpopulate-populate words
  * @words: array of pointers to words that will be populated in the function
  * @str: represents the input string
- * @nword: number of words in input string
  * Return:words
  */
-char **wordpopulate(char **words, char *str, int nword)
+char **wordpopulate(char **words, char *str)
 {
 	int i, wrdcnt = 0, wrdlen = 0;
 
@@ -115,7 +114,7 @@ char **strtow(char *str)
 	wrds = (char **)malloc((nword + 1) * sizeof(char *));
 	if (wrds == NULL)
 		return (NULL);
-	wrds = wordpopulate(wrds, str, nword);
+	wrds = wordpopulate(wrds, str);
 	return (wrds);
 }
 /**
