@@ -105,11 +105,25 @@ char **wordpopulate(char **words, char *str)
  */
 char **strtow(char *str)
 {
-	int nword;
+	int nword, space_only;
 	char **wrds;
 
-	if (str == NULL || *str == '\0' || (str[0] == ' ' && str[1] == '\0'))
+	if (str == NULL || *str == '\0')
 		return (NULL);
+	space_only = 1;
+	while (*str)
+	{
+		if (*str != ' ')
+		{
+			space_only = 0;
+			break;
+		}
+		str++;
+	}
+	if (space_only)
+	{
+		return (NULL);
+	}
 	nword = wordcount(str);
 	wrds = (char **)malloc((nword + 1) * sizeof(char *));
 	if (wrds == NULL)
