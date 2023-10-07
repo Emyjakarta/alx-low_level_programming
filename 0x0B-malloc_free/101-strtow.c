@@ -108,7 +108,7 @@ char **strtow(char *str)
 	int nword;
 	char **wrds;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || *str == '\0' || str[0] == ' ' && str[1] == '\0')
 		return (NULL);
 	nword = wordcount(str);
 	wrds = (char **)malloc((nword + 1) * sizeof(char *));
