@@ -46,6 +46,54 @@ char *wordextract(char *start, int length)
 	return (word);
 }
 /**
+ * wordpopulate-populate words
+ * @words: array of pointers to words that will be populated in the function
+ * @str: represents the input string
+ * @nword: number of words in input string
+ * Return:words
+ */
+char **wordpopulate(char **words, char *str, int nword)
+{
+	int i, wrdcnt = 0, wrdlen = 0;
+
+	while (*str != '\0')
+	{
+		if (*str == ' ' || *str == '\t' || *str == '\n')
+		{
+			if (wrdlen > 0)
+			{
+				words[wrdcnt] = wordextract(str - wrdlen, wrdlen);
+				if (words[wrdcnt] == NULL)
+				{
+					for (i = 0; i < wrdcnt; i++)
+						free(words[i]);
+					free(words);
+					return (NULL);
+				}
+				wrdcnt++;
+				wrdlen = 0;
+			}
+		}
+		else
+			wrdlen++;
+		str++;
+	}
+	if (wrdlen > 0)
+	{
+		words[wrdcnt] = wordextract(str - wrdlen, wrdlen);
+		if (words[wrdcnt] == NULL)
+		{
+			for (i = 0; i <= wrdcnt; i++)
+				free(words[i]);
+			free(words);
+			return (NULL);
+		}
+		wrdcnt++;
+	}
+	words[wrdcnt] = NULL;
+	return (words);
+}
+/**
  * strtow-a function that splits a string into words
  * The function returns a pointer to an array of strings (words)
  * @str: string
@@ -67,50 +115,8 @@ char **strtow(char *str)
 	wrds = (char **)malloc((nword + 1) * sizeof(char *));
 	if (wrds == NULL)
 		return (NULL);
-	wrdcnt = 0;
-	wrdlen = 0;
-	while (*str != '\0')
-	{
-		if (*str == ' ' || *str == '\t' || *str == '\n')
-		{
-			if (wrdlen > 0)
-			{
-				wrds[wrdcnt] = wordextract(str - wrdlen, wrdlen);
-				if (wrds[wrdcnt] == NULL)
-				{
-					for (i = 0; i < wrdcnt; i++)
-					{
-						free(wrds[i]);
-					}
-					free(wrds);
-					return (NULL);
-				}
-				wrdcnt++;
-				wrdlen = 0;
-			}
-		}
-		else
-		{
-			wrdlen++;
-		}
-		str++;
-	}
-	if (wrdlen > 0)
-	{
-		wrds[wrdcnt] = wordextract(str - wrdlen, wrdlen);
-		if (wrds[wrdcnt] == NULL)
-		{
-			for (i = 0; i <= wrdcnt; i++)
-			{
-				free(wrds[i]);
-			}
-			free(wrds);
-			return (NULL);
-		}
-		wrdcnt++;
-	}
-	wrds[wrdcnt] = NULL;
-	return (wrds);
+	words = wordpopulate(words, str, nword);
+	return (words);
 }
 /**
  * freewords-free memory
