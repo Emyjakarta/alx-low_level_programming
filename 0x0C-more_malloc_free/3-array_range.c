@@ -2,9 +2,9 @@
 #include <stdlib.h>
 /**
  * array_range-a function that creates an array of integers.
- * @min: minimum integer 
+ * @min: minimum integer
  * @max: maximum integer
- * The array created should contain all the values from min (included) 
+ * The array created should contain all the values from min (included)
  * to max (included), ordered from min to max
  * Return:the pointer to the newly created array
  * If min > max, return NULL
@@ -20,10 +20,11 @@ int *array_range(int min, int max)
 	ptr = malloc((max - min + 1) * sizeof(int));
 	if (ptr == NULL)
 		return (NULL);
-	Q = 0;
-	while (Q = min; Q <= max; Q++)
+	Q = min;
+	while (max >= Q)
 	{
 		ptr[Q - min] = Q;
+		Q++;
 	}
 	return (ptr);
 }
