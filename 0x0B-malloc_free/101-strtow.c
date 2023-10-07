@@ -119,7 +119,7 @@ void freewords(char **words)
 	if (words == NULL)
 		return;
 	for (i = 0; words[i] != NULL; i++)
-	{	
+	{
 		free(words[i]);
 	}
 	free(words);
