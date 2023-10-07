@@ -115,8 +115,8 @@ char **strtow(char *str)
 	wrds = (char **)malloc((nword + 1) * sizeof(char *));
 	if (wrds == NULL)
 		return (NULL);
-	words = wordpopulate(words, str, nword);
-	return (words);
+	wrds = wordpopulate(wrds, str, nword);
+	return (wrds);
 }
 /**
  * freewords-free memory
