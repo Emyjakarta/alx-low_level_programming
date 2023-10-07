@@ -67,11 +67,8 @@ char **strtow(char *str)
 					free(wrds);
 					return (NULL);
 				}
-				for (i = 0; i < wrdlen; i++)
-				{
-					wrds[wrdcnt][i] = *(str - wrdlen + i);
-				}
-				wrds[wrdcnt][i] = '\0';
+				strncpy(wrds[wrdcnt], str - wrdlen, wrdlen);
+				wrds[wrdcnt][wrdlen] = '\0';
 				wrdcnt++;
 				wrdlen = 0;
 			}
@@ -94,11 +91,8 @@ char **strtow(char *str)
 			free(wrds);
 			return (NULL);
 		}
-		for (i = 0; i < wrdlen; i++)
-		{
-			wrds[wrdcnt][i] = *(str - wrdlen + i);
-		}
-		wrds[wrdcnt][i] = '\0';
+		strncpy(wrds[wrdcnt], str - wrdlen, wrdlen);
+		wrds[wrdcnt][wrdlen] = '\0';
 		wrdcnt++;
 	}
 	wrds[wrdcnt] = NULL;
