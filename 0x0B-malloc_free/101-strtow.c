@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 /**
  * wordcount-count words
  * @str: string
@@ -9,6 +10,8 @@ int wordcount(char *str)
 {
 	int cnt = 0, word = 0;
 
+	if (str == NULL || *str == '\0')
+		return (0);
 	while (*str != '\0')
 	{
 		if (*str == ' ' || *str == '\t' || *str == '\n')
