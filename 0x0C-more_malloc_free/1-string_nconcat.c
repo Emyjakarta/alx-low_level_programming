@@ -30,7 +30,7 @@ size_t lenstr(char *str)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	size_t s1len, s2len, R;
-	char *concat, p;
+	char *concat, *p;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -44,7 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (concat == NULL)
 		return (NULL);
 	p = concat;
-	while (s1 != '\0')
+	while (*s1 != '\0')
 	{
 		*p++ = *s1++;
 	}
