@@ -112,6 +112,11 @@ char **strtow(char *str)
 	wrds[wrdcnt] = NULL;
 	return (wrds);
 }
+/**
+ * freewords-free memory
+ * @words: memory to be freed
+ * Return:void
+ */
 void freewords(char **words)
 {
 	int i;
