@@ -10,7 +10,7 @@ size_t lenstr(char *str)
 	size_t Q;
 
 	for (Q = 0; str[Q] != '\0'; Q++)
-		return (Q);
+	return (Q);
 }
 /**
  * string_nconcat-a function that concatenates two strings.
@@ -30,12 +30,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	size_t s1len, s2len, R;
 	char *concat, p;
 
-	s1len = lenstr(s1);
-	s2len = lenstr(s2);
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+	s1len = lenstr(s1);
+	s2len = lenstr(s2);
 	if (n >= s2len)
 		n = s2len;
 	concat = malloc(s1len + n + 1);
