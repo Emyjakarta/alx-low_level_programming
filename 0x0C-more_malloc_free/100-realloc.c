@@ -22,7 +22,7 @@
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *p1;
-	char *p_old_char, *p_new_char;
+	unsigned char *p_old_char, *p_new_char;
 	unsigned int Q;
 
 	if (ptr == NULL)
