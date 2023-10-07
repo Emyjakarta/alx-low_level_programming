@@ -10,6 +10,8 @@ size_t lenstr(char *str)
 	size_t Q;
 
 	for (Q = 0; str[Q] != '\0'; Q++)
+	{
+	}
 	return (Q);
 }
 /**
