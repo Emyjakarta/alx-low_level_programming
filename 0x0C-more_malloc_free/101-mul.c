@@ -1,15 +1,6 @@
 #include "main.h"
 #include <stddef.h>
 /**
- * _isdigit-checks if a character is a digit
- * @Q: character to be checked
- * Return:digits
- */
-int _isdigit(char Q)
-{
-	return (Q >= '0' && Q <= '9');
-}
-/**
  * _atoi-convert ascii to integer
  * @Q: character to be converted
  * Return: integer
@@ -52,9 +43,9 @@ int _isnumber(char *str)
 {
 	size_t i = 0;
 
-	while (str[i] != '\0')
+	while (str[i])
 	{
-		if (!_isdigit(str[i]))
+		if (str[i] < '0' || str[i] > '9')
 		{
 			return (0);
 		}
