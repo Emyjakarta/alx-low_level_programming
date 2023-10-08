@@ -1,5 +1,8 @@
 #include "main.h"
 #include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 /**
  * _atoi-convert ascii to integer
  * @Q: character to be converted
@@ -107,16 +110,27 @@ int main(int argc, char *argv[])
 		errorprint();
 		return (98);
 	}
-	num1s = argv[1];
-	num2s = argv[2];
+	num1s = calloc(strlen(argv[1]) + 1, sizeof(char));
+	num2s = calloc(strlen(argv[2]) + 1, sizeof(char));
+	if (num1s == NULL || num2s == NULL)
+	{
+		printf("Allocation of memory failed.\n");
+		return (1);
+	}
+	strcpy(num1s, argv[1]);
+	strcpy(num2s, argv[2]);
 	if (!_isnumber(num1s) || !_isnumber(num2s))
 	{
 		errorprint();
+		free(num1s);
+		free(num2s);
 		return (98);
 	}
 	num1 = __atoi(num1s);
 	num2 = __atoi(num2s);
 	result = mult(num1, num2);
 	Resultprint(result);
+	free(num1s);
+	free(num2s);
 	return (0);
 }
