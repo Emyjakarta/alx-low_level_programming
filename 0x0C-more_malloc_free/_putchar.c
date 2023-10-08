@@ -20,7 +20,7 @@ int _isdigit(char Q)
 	return (Q >= '0' && Q <= '9');
 }
 /**
- * _atoi: convert ascii to integer
+ * _atoi-convert ascii to integer
  * @Q: character to be converted
  * Return: integer
  */
@@ -29,7 +29,7 @@ int _atoi(char Q)
 	return (Q - '0');
 }
 /**
- * mult: multiply two positive numbers
+ * mult-multiply two positive numbers
  * @num1: first positive number
  * @num2: second positive number
  * Return: num1 * num2
