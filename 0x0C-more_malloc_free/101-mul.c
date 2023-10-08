@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stddef.h>
+int mult(int num1, int num2);
 /**
  * errorprint-error message
  * Return:void
