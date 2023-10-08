@@ -23,21 +23,6 @@ int mult(int num1, int num2)
 	return (num1 * num2);
 }
 /**
- * errorprint-error message
- * Return:void
- */
-void errorprint(void)
-{
-	int i;
-	char *Q = "Error";
-
-	for (i = 0; i < 5; i++)
-	{
-		_putchar(Q[i]);
-	}
-	_putchar('\n');
-}
-/**
  * _isnumber-check if string is a number
  * @str: string
  * Return:0
@@ -73,28 +58,6 @@ int __atoi(char *str)
 	return (result);
 }
 /**
- * Resultprint-print result
- * @result: result
- * Return: void
- */
-void Resultprint(int result)
-{
-	char result_string[12];
-	int k = 0, j;
-	int temp = result;
-
-	while (temp > 0)
-	{
-		result_string[k++] = temp % 10 + '0';
-		temp /= 10;
-	}
-	for (j = k - 1; j >= 0; j--)
-	{
-		_putchar(result_string[j]);
-	}
-	_putchar('\n');
-}
-/**
  * main-takes two arguments
  * @argc: number of arguments
  * @argv: argument vector
@@ -107,8 +70,8 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		errorprint();
-		return (98);
+		printf("Error\n");
+		exit(98);
 	}
 	num1s = calloc(strlen(argv[1]) + 1, sizeof(char));
 	num2s = calloc(strlen(argv[2]) + 1, sizeof(char));
@@ -121,15 +84,15 @@ int main(int argc, char *argv[])
 	strcpy(num2s, argv[2]);
 	if (!_isnumber(num1s) || !_isnumber(num2s))
 	{
-		errorprint();
+		printf("Error\n");
 		free(num1s);
 		free(num2s);
-		return (98);
+		exit(98);
 	}
 	num1 = __atoi(num1s);
 	num2 = __atoi(num2s);
 	result = mult(num1, num2);
-	Resultprint(result);
+	printf("%i\n", result);
 	free(num1s);
 	free(num2s);
 	return (0);
