@@ -4,15 +4,6 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * _atoi-convert ascii to integer
- * @Q: character to be converted
- * Return: integer
- */
-int _atoi(char Q)
-{
-	return (Q - '0');
-}
-/**
  * mult-multiply two positive numbers
  * @num1: first positive number
  * @num2: second positive number
@@ -42,18 +33,18 @@ int _isnumber(char *str)
 	return (1);
 }
 /**
- * __atoi-ascii to integer
+ * _atoi-ascii to integer
  * @str: string
  * Return: result
  */
-int __atoi(char *str)
+int _atoi(char *str)
 {
 	int result = 0;
 	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		result = result * 10 + (_atoi(str[i]));
+		result = result * 10 + (str[i] - '0');
 	}
 	return (result);
 }
@@ -89,8 +80,8 @@ int main(int argc, char *argv[])
 		free(num2s);
 		exit(98);
 	}
-	num1 = __atoi(num1s);
-	num2 = __atoi(num2s);
+	num1 = _atoi(num1s);
+	num2 = _atoi(num2s);
 	result = mult(num1, num2);
 	printf("%i\n", result);
 	free(num1s);

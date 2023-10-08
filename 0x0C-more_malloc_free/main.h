@@ -8,7 +8,7 @@ int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char _putchar(char Q);
 int _isdigit(char Q);
-int _atoi(char Q);
+int _atoi(char *str);
 int mult(int num1, int num2);
 
 #endif /* MAIN_H */
