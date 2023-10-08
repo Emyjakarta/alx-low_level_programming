@@ -25,7 +25,7 @@ int mult(int num1, int num2)
  */
 void errorprint(void)
 {
-	size_t i;
+	int i;
 	char *Q = "Error";
 
 	for (i = 0; i < 5; i++)
@@ -41,7 +41,7 @@ void errorprint(void)
  */
 int _isnumber(char *str)
 {
-	size_t i = 0;
+	int i = 0;
 
 	while (str[i])
 	{
@@ -61,7 +61,7 @@ int _isnumber(char *str)
 int __atoi(char *str)
 {
 	int result = 0;
-	size_t i;
+	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -100,7 +100,7 @@ void Resultprint(int result)
 int main(int argc, char *argv[])
 {
 	char *num1s, *num2s;
-	size_t num1, num2, result;
+	int num1, num2, result;
 
 	if (argc != 3)
 	{
