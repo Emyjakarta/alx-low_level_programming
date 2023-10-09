@@ -26,8 +26,7 @@ int _isnumber(char *str)
 	{
 		if (str[i] < '0' || str[i] > '9')
 		{
-			printf("Error\n");
-			return (98);
+			return (0);
 		}
 		i++;
 	}
