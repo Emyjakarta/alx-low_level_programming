@@ -27,7 +27,6 @@ char *multstr(char num1[], char num2[])
 		sprintf(_resultstring, "0");
 		return (_resultstring);
 	}
-	free(_result);
 	for (i = lent1 - 1; i >= 0; i--)
 	{
 		for (j = lent2 - 1; j >= 0; j--)
