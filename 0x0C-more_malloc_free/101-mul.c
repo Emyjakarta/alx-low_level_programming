@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 /**
  * mult-multiply two positive numbers
  * @num1: first positive number
