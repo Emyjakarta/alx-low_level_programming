@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stddef.h>
 
 void *malloc_checked(unsigned int b);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
@@ -9,6 +10,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char _putchar(char Q);
 int _isdigit(char Q);
 int _atoi(char *str);
-unsigned int mult(int num1, int num2);
+size_t mult(int num1, int num2);
 
 #endif /* MAIN_H */

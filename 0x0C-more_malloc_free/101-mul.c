@@ -3,15 +3,16 @@
 #include <stdio.h>
 #include <limits.h>
 #include <ctype.h>
+#include <stddef.h>
 /**
  * mult-multiply two positive numbers
  * @num1: first positive number
  * @num2: second positive number
  * Return: num1 * num2
  */
-unsigned int mult(int num1, int num2)
+size_t mult(int num1, int num2)
 {
-	return ((unsigned int)num1 * num2);
+	return ((size_t)num1 * num2);
 }
 /**
  * _isnumber-check if string is a number
@@ -58,7 +59,7 @@ int _atoi(char *str)
 int main(int argc, char *argv[])
 {
 	int num1, num2; 
-	unsigned int result;
+	size_t result;
 
 	if (argc != 3)
 	{
@@ -78,6 +79,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	result = mult(num1, num2);
-	printf("%u\n", result);
+	printf("%ld\n", result);
 	return (0);
 }
