@@ -25,17 +25,14 @@ char *multstr(char num1[], char num2[])
 			exit(EXIT_FAILURE);
 		}
 		sprintf(_resultstring, "0");
-		free(_result);
 		return (_resultstring);
 	}
 	for (i = lent1 - 1; i >= 0; i--)
 	{
 		for (j = lent2 - 1; j >= 0; j--)
 		{
-			prod = (num1[i] - '0') * (num2[j] - '0');
-			sum = prod + _result[i + j + 1];
-			_result[i + j + 1] = sum % 10;
-			_result[i + j] += sum / 10;
+			prod = (num1[i] - '0') * (num2[j] - '0'), sum = prod + _result[i + j + 1];
+			_result[i + j + 1] = sum % 10, _result[i + j] += sum / 10;
 		}
 	}
 	i = 0;
@@ -50,6 +47,9 @@ char *multstr(char num1[], char num2[])
 	}
 	_resultstring[k] = '\0';
 	free(_result);
+	return (_resultstring);
+	if (_result != NULL)
+		free(_result);
 	return (_resultstring);
 }
 /**
