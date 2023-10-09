@@ -12,11 +12,22 @@
 char *multstr(char num1[], char num2[])
 {
 	int lent1 = strlen(num1), i, j;
-	int lent2 = strlen(num2), prod, sum, k;
-	int _resultsize = lent1 + lent2;
+	int lent2 = strlen(num2), prod, sum, k, _resultsize = lent1 + lent2;
 	int *_result = calloc(_resultsize, sizeof(int));
 	char *_resultstring;
 
+	if (strcmp(num1, "0") == 0 || strcmp(num2, "0") == 0)
+	{
+		_resultstring = malloc(2);
+		if (_result == NULL)
+		{
+			perror("Allocation of memory failed");
+			exit(EXIT_FAILURE);
+		}
+		sprintf(_resultstring, "0");
+		return (_resultstring);
+	}
+	free(_result);
 	for (i = lent1 - 1; i >= 0; i--)
 	{
 		for (j = lent2 - 1; j >= 0; j--)
