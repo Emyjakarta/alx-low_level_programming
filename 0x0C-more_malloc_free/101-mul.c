@@ -19,12 +19,13 @@ char *multstr(char num1[], char num2[])
 	if (strcmp(num1, "0") == 0 || strcmp(num2, "0") == 0)
 	{
 		_resultstring = malloc(2);
-		if (_result == NULL)
+		if (_resultstring == NULL)
 		{
 			perror("Allocation of memory failed");
 			exit(EXIT_FAILURE);
 		}
 		sprintf(_resultstring, "0");
+		free(_result);
 		return (_resultstring);
 	}
 	for (i = lent1 - 1; i >= 0; i--)
@@ -84,6 +85,11 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(98);
+	}
+	if (strcmp(argv[1], "0") == 0 || strcmp(argv[2], "0") == 0)
+	{
+		printf("0\n");
+		return (0);
 	}
 	result = multstr(argv[1], argv[2]);
 	printf("%s\n", result);
