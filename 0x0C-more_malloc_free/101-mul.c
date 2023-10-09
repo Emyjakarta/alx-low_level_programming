@@ -1,24 +1,54 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <limits.h>
+#include <string.h>
 #include <ctype.h>
 /**
- * mult-multiply two positive numbers
+ * multstr-multiply two positive numbers
  * @num1: first positive number
  * @num2: second positive number
- * Return: num1 * num2
+ * Return: _resultstring
  */
-int mult(int num1, int num2)
+char *multstr(char num1[], char num2[])
 {
-	return (num1 * num2);
+	int lent1 = strlen(num1), i, j;
+	int lent2 = strlen(num2), prod, sum, k;
+	int _resultsize = lent1 + lent2;
+	int *_result = malloc(sizeof(int) * _resultsize);
+	char *_resultstring;
+
+	for (i = 0; i < _resultsize; i++)
+		_result[i] = 0;
+	for (i = lent1 - 1; i >= 0; i--)
+	{
+		for (j = lent2 - 1; j >= 0; j--)
+		{
+			prod = (num1[i] - '0') * (num2[i] - '0');
+			sum = prod + _result[i + j + 1];
+			_result[i + j + 1] = sum % 10;
+			_result[i + j] += sum / 10;
+		}
+	}
+	i = 0;
+	while (i < _resultsize && _result[i] == 0)
+		i++;
+	_resultstring = malloc(sizeof(char) * (_resultsize - i + 1));
+	k = 0;
+	while (i < _resultsize)
+	{
+		_resultstring[k++] = _result[i] + '0';
+		i++;
+	}
+	_resultstring[k] = '\0';
+	free(_result);
+	return (_resultstring);
 }
 /**
- * _isnumber-check if string is a number
+ * _ispositivenumber-check if string is a number
  * @str: string
  * Return:1 if number, 0 otherwise
  */
-int _isnumber(char *str)
+int _ispositivenumber(char *str)
 {
 	int i = 0;
 
@@ -33,22 +63,6 @@ int _isnumber(char *str)
 	return (1);
 }
 /**
- * _atoi-ascii to integer
- * @str: string
- * Return: result
- */
-int _atoi(char *str)
-{
-	int result = 0;
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		result = result * 10 + (str[i] - '0');
-	}
-	return (result);
-}
-/**
  * main-takes two arguments and multiplies them
  * @argc: number of arguments
  * @argv: argument vector
@@ -56,26 +70,22 @@ int _atoi(char *str)
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
+	char *num1str, *num2str, *result;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (!_isnumber(argv[1]) || !_isnumber(argv[2]))
+	num1str = argv[1];
+	num2str = argv[2];
+	if (!_ispositivenumber(num1str) || !_ispositivenumber(num2str))
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	num1 = _atoi(argv[1]);
-	num2 = _atoi(argv[2]);
-	if (num1 > 0 && num2 > INT_MAX / num1)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	result = mult(num1, num2);
-	printf("%i\n", result);
+	result = multstr(num1str, num2str);
+	printf("%s\n", result);
+	free(result);
 	return (0);
 }
