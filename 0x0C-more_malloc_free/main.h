@@ -9,6 +9,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char _putchar(char Q);
 int _isdigit(char Q);
 int _atoi(char *str);
-long long int mult(int num1, int num2);
+long int mult(int num1, int num2);
 
 #endif /* MAIN_H */

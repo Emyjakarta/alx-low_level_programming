@@ -9,9 +9,9 @@
  * @num2: second positive number
  * Return: num1 * num2
  */
-long long int mult(int num1, int num2)
+long int mult(int num1, int num2)
 {
-	return ((long long int)num1 * num2);
+	return ((long int)num1 * num2);
 }
 /**
  * _isnumber-check if string is a number
@@ -58,7 +58,7 @@ int _atoi(char *str)
 int main(int argc, char *argv[])
 {
 	int num1, num2; 
-	long long int result;
+	long int result;
 
 	if (argc != 3)
 	{
@@ -78,6 +78,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	result = mult(num1, num2);
-	printf("%lld\n", result);
+	printf("%ld\n", result);
 	return (0);
 }
