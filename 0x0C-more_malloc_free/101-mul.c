@@ -46,8 +46,6 @@ char *multstr(char num1[], char num2[])
 		i++;
 	}
 	_resultstring[k] = '\0';
-	free(_result);
-	return (_resultstring);
 	if (_result != NULL)
 		free(_result);
 	return (_resultstring);
