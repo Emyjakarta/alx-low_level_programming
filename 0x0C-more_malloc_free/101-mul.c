@@ -38,6 +38,8 @@ char *multstr(char num1[], char num2[])
 	i = 0;
 	while (i < _resultsize && _result[i] == 0)
 		i++;
+	if (i == _resultsize)
+		i--;
 	_resultstring = malloc(sizeof(char) * (_resultsize - i + 1));
 	k = 0;
 	while (i < _resultsize)
