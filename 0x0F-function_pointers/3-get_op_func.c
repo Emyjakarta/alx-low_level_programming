@@ -19,7 +19,7 @@ int (*get_op_func(char *s))(int, int)
 	};
 	for (Q = 0; ops[Q].op; Q++)
 	{
-		if (*(ops[Q].op) == *s && *(s + 1) == '\0')
+		if (strcmp(ops[Q].op), s) == 0)
 			return (ops[Q].f);
 	}
 	return (NULL);
