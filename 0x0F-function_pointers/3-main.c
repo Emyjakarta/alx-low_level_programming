@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 	sign = get_op_func(argv[2]);
-	if (sign == NULL)
+	if (!sign)
 	{
 		printf("Error\n");
 		return (99);
