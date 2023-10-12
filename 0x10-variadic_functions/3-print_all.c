@@ -42,8 +42,7 @@ void print_all(const char *const format, ...)
 				string = va_arg(ptr, char *);
 				if (string == NULL)
 					printf("(nil)");
-				else
-					printf("%s%s", separator, string);
+				printf("%s%s", separator, string);
 				break;
 			default:
 				count++;
