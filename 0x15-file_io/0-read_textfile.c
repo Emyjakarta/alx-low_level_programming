@@ -14,54 +14,30 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int _fd;
 	char *buffer;
 	ssize_t _read_bytes, _write_bytes;
-	off_t _file_size;
-	size_t _read_size;
-	struct stat file_stat;
 
 	if (filename == NULL)
 		return (0);
 	_fd = open(filename, O_RDONLY);
 	if (_fd == -1)
-	{
-		perror("Error opening the file");
 		return (0);
-	}
-	if (fstat(_fd, &file_stat) == -1)
-	{
-		close(_fd);
-		perror("Error getting file size");
-		return (0);
-	}
-	_file_size = file_stat.st_size;
-	if ((off_t)letters < _file_size)
-		_read_size = letters;
-	else
-		_read_size = (size_t)_file_size;
-	buffer = malloc(sizeof(char) * (_read_size + 1));
+	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 	{
 		close(_fd);
-		perror("Error allocating memory for buffer");
 		return (0);
 	}
-	_read_bytes = read(_fd, buffer, _read_size);
+	_read_bytes = read(_fd, buffer, letters);
+	close(_fd);
 	if (_read_bytes == -1)
 	{
-		close(_fd);
 		free(buffer);
-		perror("Error reading from file");
-		return(0);
-	}
-	buffer[_read_bytes] = '\0';
-	_write_bytes = write(STDOUT_FILENO, buffer, _read_bytes);
-	if (_write_bytes == -1 || (size_t)_write_bytes != _read_size)
-	{
-		close(_fd);
-		free(buffer);
-		perror("Error writing to standard output");
 		return (0);
 	}
-	close(_fd);
+	_write_bytes = write(STDOUT_FILENO, buffer, _read_bytes);
 	free(buffer);
+	if (_read_bytes != _write_bytes)
+	{
+		return (0);
+	}
 	return (_write_bytes);
 }
