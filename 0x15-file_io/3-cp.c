@@ -45,6 +45,7 @@ int main(int argc, char **argv)
 	int _fd_from, _fd_to;
 	char buffer[BUFFER_SIZE];
 	ssize_t _read_bytes, _write_bytes;
+	mode_t old_mask;
 
 	if (argc != 3)
 		_show_error_and_exit(97, "Usage: cp file_from file_to");
@@ -54,8 +55,8 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", _file_from);
 			exit(98);
 	}
-	_fd_to = open(_file_to, O_WRONLY | O_CREAT | O_TRUNC,
-			S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+	old_mask = umask(0), _fd_to = open(_file_to, O_WRONLY | O_CREAT | O_TRUNC,
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH), umask(old_mask);
 	if (_fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", _file_to), exit(99);
