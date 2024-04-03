@@ -1,0 +1,9 @@
+# retrieve all the C source files in the current directory 
+SRC = main.c school.c
+
+# assign the C compiler to be used
+CC = gcc
+
+# generate the executable file `school` from the C source files
+all:
+	${CC} ${SRC} -o school
