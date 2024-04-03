@@ -1,0 +1,17 @@
+# building an executable file named `school` from the C objects
+# files. The object files are then linked to create the executable file.
+
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+
+.PHONY: all
+
+# linking the object files and creating the executable
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
+
+# generating object files
+%.o: %.c
+	${CC} -c -o $@ $<
