@@ -1,0 +1,33 @@
+# build an executable file name `school` from the C objects
+# files. The object files are then linked to create the executable file.
+
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
+RM = rm
+
+
+.PHONY: all clean oclean fclean re
+
+# linking object files and creating the executable
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
+
+# generating object files
+%.o: %.c
+	${CC} -c -o $@ $<
+
+# cleaning up Vim and Emacs temporary files
+clean:
+	-${RM} -f *~ ${NAME}
+
+# cleaning up object files
+oclean:
+	-${RM} -f ${OBJ}
+
+# performing a full clean of objects and temporary files
+fclean: oclean clean
+
+# forcing the recompilation and building of executable files
+re: oclean all
