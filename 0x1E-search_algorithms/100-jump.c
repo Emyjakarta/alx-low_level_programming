@@ -7,7 +7,7 @@
  * @array: pointer to the first element of the array to search in
  * @size: number of elements in array
  * @value: value to search for
- * @prev: previous index
+ * @fmr: previous index
  * @jump: jump index
  *
  * Return: index where value is located, or -1 on failure
